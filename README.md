@@ -7,7 +7,8 @@ A simple Windows Forms calculator built with **C#**.
 ## ✨ Features
 - ➕ **Basic Operations:** Addition, subtraction, multiplication (×), and division (÷)  
 - ⌫ **Backspace:** Remove the last entered character  
-- ⚠️ **Error Handling:** Displays `Error` for invalid expressions  
+- ⚠️ **Error Handling:** Displays `Error` for invalid expressions
+- 🧮 **PEMDAS** Follows PEMDAS rules when evaluating long expressions
   
 ---
 
