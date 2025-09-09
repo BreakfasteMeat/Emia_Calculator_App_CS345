@@ -1,25 +1,14 @@
-# Emia Calculator App (CS345)
+# Calculator App (CS345)
 
 A simple Windows Forms calculator built with **C#**.  
-This app supports basic arithmetic operations with a clean and minimal UI.
 
 ---
 
 ## ✨ Features
 - ➕ **Basic Operations:** Addition, subtraction, multiplication (×), and division (÷)  
 - ⌫ **Backspace:** Remove the last entered character  
-- 🔢 **Decimal Support:** Prevents multiple decimals in a number  
 - ⚠️ **Error Handling:** Displays `Error` for invalid expressions  
-- 📜 **History-ready:** Expression is stored before evaluation (can be extended)  
-
----
-
-## ⚙️ How It Works
-- Input numbers and operators using on-screen buttons  
-- Symbols `×` and `÷` are automatically converted to `*` and `/`  
-- Expressions are evaluated using **`DataTable.Compute()`**  
-- Invalid inputs (like divide by zero) show an error message  
-
+  
 ---
 
 ## 🚀 Usage
