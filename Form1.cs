@@ -46,7 +46,6 @@ namespace Emia_Calculator_App_CS345
         }
         private void equalsButtonClicked(object sender, EventArgs e){
             String expression = equationBox.Text;
-            String to_add_to_history = expression;
             expression = expression.Replace("÷", "/");
             expression = expression.Replace("×", "*");
             try {
