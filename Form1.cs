@@ -17,11 +17,15 @@ namespace Emia_Calculator_App_CS345
             InitializeComponent();
         }
 
-        private void numberButtonClicked(object sender, EventArgs e) {
+        private void checkIsClearing() { 
             if (isClearingBox || equationBox.Text == "Infinity"){
                 clearEquationBox(null,null);
                 isClearingBox=false;
             }
+        }
+
+        private void numberButtonClicked(object sender, EventArgs e) {
+            checkIsClearing();
             equationBox.Text = equationBox.Text + ((Button)sender).Text;
         }
         private void backspaceClicked(object sender, EventArgs e) {
@@ -51,6 +55,8 @@ namespace Emia_Calculator_App_CS345
             try {
                 String result = new DataTable().Compute(expression, "").ToString();
                 equationBox.Text = result;
+                if(result == "Infinity") isClearingBox = true;
+
             } catch (Exception ex){
                 showMessage("Error");
             }
@@ -58,7 +64,10 @@ namespace Emia_Calculator_App_CS345
         }
 
         private void operatorButtonClicked(object sender, EventArgs e){
-
+            if ( isClearingBox ) {
+                checkIsClearing();
+                return;
+            }
             String expression = equationBox.Text;
             if(expression.Length == 0) { return; }
             Char last_element = expression[expression.Length - 1];
@@ -66,6 +75,7 @@ namespace Emia_Calculator_App_CS345
                 equationBox.Text = expression.Substring(0, expression.Length - 1);
             }
             equationBox.Text += ((Button)sender).Text;
+           
 
         }
 
